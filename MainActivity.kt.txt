@@ -1,0 +1,71 @@
+package com.example.basic_calaculator_app
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.btn1
+import kotlinx.android.synthetic.main.activity_main.btn2
+import kotlinx.android.synthetic.main.activity_main.btn3
+import kotlinx.android.synthetic.main.activity_main.btn4
+import kotlinx.android.synthetic.main.activity_main.edit
+import kotlinx.android.synthetic.main.activity_main.edit1
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        btn1.setOnClickListener{
+            if(edit.text.toString()!="" && edit1.text.toString()!=""){
+val num1=edit.toString().toInt()
+                val num2=edit.toString().toInt()
+                val sum=num1+num2
+                Toast.makeText(this,"sum of numbers is $sum" ,Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(this,"sum of numbers is " ,Toast.LENGTH_LONG).show()
+            }
+        }
+
+        btn2.setOnClickListener{
+            if(edit.text.toString()!="" && edit1.text.toString()!=""){
+                val num1=edit.toString().toInt()
+                val num2=edit.toString().toInt()
+                val sub:Int = if(num1>num2){
+                    num1-num2
+                } else{
+                    num2-num1
+                }
+                Toast.makeText(this,"subtraction of numbers is $sub",Toast.LENGTH_LONG).show()
+
+            }
+            else{
+                Toast.makeText(this,"please fill all required values  ",Toast.LENGTH_LONG).show()
+            }
+        }
+        btn3.setOnClickListener{
+            if(edit.text.toString()!="" && edit1.text.toString()!=""){
+                val num1=edit.toString().toInt()
+                val num2=edit.toString().toInt()
+                val mul=num1*num2
+                Toast.makeText(this,"multiplication of number is $mul",Toast.LENGTH_LONG).show()
+
+            }
+            else{
+                Toast.makeText(this,"please fill all required fields",Toast.LENGTH_LONG).show()
+            }
+        }
+        btn4.setOnClickListener{
+            if(edit.text.toString()!="" && edit1.text.toString()!=""){
+                val num1=edit.toString().toInt()
+                val num2=edit.toString().toInt()
+                val div=num1/num2
+                Toast.makeText(this,"division of numbers is $div",Toast.LENGTH_LONG).show()
+            }
+            else{
+                Toast.makeText(this,"please fill all required fields",Toast.LENGTH_LONG).show()
+            }
+        }
+
+
+    }
+}
